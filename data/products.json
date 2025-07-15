@@ -8,11 +8,7 @@
         "discount": "40",
         "imageUrl": "assets/product-spark-plug.png",
         "description": "These spark plugs are perfect for reliable engine performance. Designed with quality materials, they ensure smooth ignition, better fuel efficiency, and long-lasting durability.",
-        "features": [
-            "Ensures quick and smooth engine starts",
-            "Improves fuel efficiency and performance",
-            "Built for durability and long-lasting use"
-        ],
+        "features": [ "Ensures quick and smooth engine starts", "Improves fuel efficiency and performance", "Built for durability and long-lasting use" ],
         "reviews": [
             { "customer": "Customer 1", "rating": 5, "comment": "Super convenient! I booked a repair in minutes and the updates were real-time. Highly recommend." },
             { "customer": "Customer 2", "rating": 5, "comment": "Very helpful! I reserved the part online and just picked it up, no hassle, no waiting in line." }
