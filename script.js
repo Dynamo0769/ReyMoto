@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="product-card">
                 <img src="${p.imageUrl}" alt="${p.name}">
                 <div class="product-info">
-                    <h3>${p.name}</h3><p class="price">₱${p.price}</p>
+                    <h3>${p.name}</h3><p>${p.features[0]}</p>
                     <div class="product-buttons"><a href="product-details.html?id=${p.id}" class="btn-details">More Details</a></div>
                 </div>
             </div>`).join('');
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const page = window.location.pathname.split('/').pop() || 'index.html';
 
     async function loadPage() {
-        const headerUrl = (page === 'index.html') ? 'components/header-logged-out.html' : 'components/header-logged-in.html';
+        const headerUrl = (page === 'index.html') ? 'components/header-public.html' : 'components/header-dashboard.html';
         if (['index.html', 'dashboard.html', 'product-details.html'].includes(page) || page === '') {
             await Promise.all([
                 loadComponent(headerUrl, 'header-placeholder'),
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]);
         }
 
-        if (page === 'dashboard.html') {
+        if (page === 'dashboard.html' || page === 'index.html' || page === '') {
             const products = await fetchData('data/products.json');
             if (products) await buildProductGrid(products);
         } else if (page === 'product-details.html') {
