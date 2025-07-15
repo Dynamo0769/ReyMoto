@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="product-rating">${'★'.repeat(Math.round(product.rating))}${'☆'.repeat(5 - Math.round(product.rating))} <span>${product.rating}/5</span></div>
                         <div class="product-price-details">
                             <span class="product-current-price">₱${product.price}</span>
-                            <span class="product-original-price">₱${product.originalPrice}</span>
-                            <span class="product-discount">-${product.discount}%</span>
+                            ${product.originalPrice ? `<span class="product-original-price">₱${product.originalPrice}</span>` : ''}
+                            ${product.discount ? `<span class="product-discount">-${product.discount}%</span>` : ''}
                         </div>
                         <p class="product-description">${product.description}</p>
                         <div class="product-features"><ul>${product.features.map(f => `<li>${f}</li>`).join('')}</ul></div>
